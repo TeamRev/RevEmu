@@ -7,8 +7,6 @@ using System.Linq;
 using Revolution.Application.Communication;
 using Revolution.Application.Communication.Messages.Handler;
 using Revolution.Core;
-using SuperSocket.SocketBase;
-using SuperSocket.SocketBase.Protocol;
 using Revolution.Messages;
 using SuperSocket.Facility;
 using Revolution.Revision.R63.Game.Habbo.Controller;
@@ -17,37 +15,33 @@ using Revolution.Revision.R63B.Game.Rooms.Objects.Habbo;
 
 namespace Mango.Communication.Sessions
 {
-    public class Session : AppSession<Session>
+    public class Session
     {
         public Protocol Crypto;
         private bool _disconnectedCalled;
         public string MachineID = "";
         public int X;
         public HabboController Habbo;
-
+        private byte[] buffer = new byte[1024];
         public HabboRoomObject habboRoomObject;
-
+        public Socket Socket;
         public string ReleaseBuild;
+        private ServerSocket Manager;
 
         public int Y;
 
-        private int id;
+        public int Id;
 
 
-        public Session()
+        public Session(int id, ServerSocket ServerSocket)
         {
-            
+            this.Manager = ServerSocket;
+            this.Id = id;
         }
 
-        public override void StartSession()
-        {
-            int i = 0;
-            this.id = i++;
-            base.StartSession();
-            Console.WriteLine("Session {0} started", this.id);
-         
-        }
+       
 
+        
         
         /// <summary>
         /// This method is called when data has been received.
@@ -89,7 +83,7 @@ namespace Mango.Communication.Sessions
             if (!_disconnectedCalled)
             {
                 _disconnectedCalled = true;
-                base.Close();
+                
                 
             }
         }
@@ -101,13 +95,16 @@ namespace Mango.Communication.Sessions
 
         public void SendData(byte[] data)
         {
-            base.SendResponse(data);
+            
         }
 
         public void SendData(string Data)
         {
             SendData(Encoding.UTF8.GetBytes(Data));
         }
+
+       
+        
 
 
         

@@ -4,14 +4,14 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Net;
-using Mango.Communication;
+
 using MySql.Data.MySqlClient;
 using Revolution.Application.Communication;
 using Revolution.Application.Communication.Messages.Handler;
 using Revolution.Core;
 using Revolution.Database;
 using Revolution.Messages;
-
+using Mango.Communication;
 namespace Revolution.Application
 {
     internal class Application
@@ -19,7 +19,16 @@ namespace Revolution.Application
 
         private static readonly Dictionary<string, List<string>> BannerTokensHolder =
             new Dictionary<string, List<string>>();
-        static HabboServer Server;
+
+        private static ServerSocketSettings settings = new ServerSocketSettings();
+        private static ServerSocket Server;
+
+        public static ServerSocketSettings Settings
+        {
+            get { return settings; }
+        }
+
+     
 
 
         public static NHibernateManager DbManager;
@@ -42,14 +51,17 @@ namespace Revolution.Application
             Console.Title = "Initializing Revolution Emulator....";
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(
-         @"Helpers                                              Team Rev
-          __________                                                  __________
-         | Matty13      ______              _______                  | Zak
-         | Joopie      (_____ \            (_______)                 | Mikkel
-         | Devbest      _____) )_____ _   _ _____   ____  _   _      | Manuel
-         | ItachiKM    |  __  /| ___ | | | |  ___) |    \| | | |     | Heaplink
-         | Quackster   | |  \ \| ____|\ V /| |_____| | | | |_| |    
-                       |_|   |_|_____) \_/ |_______)_|_|_|____/       ");
+         @"
+             ______              _______                  
+            (_____ \            (_______)                 
+             _____) )_____ _   _ _____   ____  _   _      
+            |  __  /| ___ | | | |  ___) |    \| | | |     
+            | |  \ \| ____|\ V /| |_____| | | | |_| |    
+            |_|   |_|_____) \_/ |_______)_|_|_|____/ 
+            Written by Adil & Zak, with contributions from 
+            Matty13, Quackster, Joopie, and DevBest.
+            Licensed under the Ms-Pl. Copyright <C> 2012.
+            NO WARRANTY IS GUARANTEED WITH USE OF THIS PROGRAM.");
             Console.WriteLine(@"");
             Console.ResetColor();
 
@@ -91,9 +103,22 @@ namespace Revolution.Application
             MessageHandler.Initialize();
 
             Console.Title = "Revolution Emulator";
-            Server = new HabboServer();
-            Console.WriteLine("Server now running.");
             
+
+            settings.MaxConnections = 1024;
+            settings.Endpoint = new IPEndPoint(IPAddress.Any, 91);
+            settings.Backlog = 2;
+            settings.MaxSimultaneousAcceptOps = 512;
+            settings.NumOfSaeaForRec = 24;
+            settings.NumOfSaeaForSend = 24;
+
+            Server = new ServerSocket(settings);
+
+
+            Server.Init();
+            Server.StartListen();
+            Console.WriteLine("Server now running.");
+            Console.WriteLine("${0}@Revolution~>", System.Environment.UserName);
             Console.Read();
         }
 
@@ -156,13 +181,14 @@ namespace Revolution.Application
         private static void Main(string[] args)
         {
             Initialize();
-          
-            while (true) Console.ReadLine();
+
+            while (true)
+            {
+                Console.WriteLine("${0}@Revolution~>", System.Environment.UserName);
+                Console.ReadLine(); 
+            }
         }
 
-        public static HabboServer GetServer()
-        {
-            return Server;
-        }
+      
     }
 }

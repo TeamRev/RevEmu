@@ -7,9 +7,6 @@ namespace Revolution.Application.Communication
 {
     class SocketEnvrionment
     {
-        public SocketEnvrionment()
-        {
-          
-        }
+       
     }
 }

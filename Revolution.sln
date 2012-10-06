@@ -13,18 +13,38 @@ Global
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs19
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
 		Debug|x86 = Debug|x86
+		MonoOutput|Any CPU = MonoOutput|Any CPU
+		MonoOutput|Mixed Platforms = MonoOutput|Mixed Platforms
 		MonoOutput|x86 = MonoOutput|x86
+		Output|Any CPU = Output|Any CPU
+		Output|Mixed Platforms = Output|Mixed Platforms
 		Output|x86 = Output|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Debug|x86.ActiveCfg = Debug|x86
 		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Debug|x86.Build.0 = Debug|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.MonoOutput|Any CPU.ActiveCfg = MonoOutput|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.MonoOutput|Mixed Platforms.ActiveCfg = MonoOutput|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.MonoOutput|Mixed Platforms.Build.0 = MonoOutput|x86
 		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.MonoOutput|x86.ActiveCfg = MonoOutput|x86
 		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.MonoOutput|x86.Build.0 = MonoOutput|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Output|Any CPU.ActiveCfg = Output|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Output|Mixed Platforms.ActiveCfg = Output|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Output|Mixed Platforms.Build.0 = Output|x86
 		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Output|x86.ActiveCfg = Output|x86
 		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Output|x86.Build.0 = Output|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Release|Any CPU.ActiveCfg = Release|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Release|Mixed Platforms.Build.0 = Release|x86
 		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Release|x86.ActiveCfg = Release|x86
 		{A9A4A9CB-7AC5-4896-BE9B-29E1112371A0}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection

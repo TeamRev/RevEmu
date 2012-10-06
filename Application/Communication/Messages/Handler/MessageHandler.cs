@@ -9,7 +9,7 @@ using Revolution.Messages.Packets;
 
 namespace Revolution.Application.Communication.Messages.Handler
 {
-    internal class MessageHandler
+    public class MessageHandler
     {
         private static readonly Dictionary<uint, object> Messages = new Dictionary<uint, object>();
 
