@@ -63,6 +63,9 @@ namespace Revolution.Core
             FixLength();
         }
 
+        public Message()
+        { }
+
         public Message(uint headerid)
         {
             BytesRemain = null;

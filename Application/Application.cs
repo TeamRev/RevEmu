@@ -58,7 +58,7 @@ namespace Revolution.Application
             |  __  /| ___ | | | |  ___) |    \| | | |     
             | |  \ \| ____|\ V /| |_____| | | | |_| |    
             |_|   |_|_____) \_/ |_______)_|_|_|____/ 
-            Written by Adil & Zak, with contributions from 
+            Written by Zak & Adil, with contributions from 
             Matty13, Quackster, Joopie, and DevBest.
             Licensed under the Ms-Pl. Copyright <C> 2012.
             NO WARRANTY IS GUARANTEED WITH USE OF THIS PROGRAM.");
@@ -101,7 +101,10 @@ namespace Revolution.Application
             Console.WriteLine("");
 
             MessageHandler.Initialize();
-
+            Revolution.Application.ScriptEngine.Manager manager = new ScriptEngine.Manager();
+            manager.Init();
+            manager.Start();
+            
             Console.Title = "Revolution Emulator";
             
 

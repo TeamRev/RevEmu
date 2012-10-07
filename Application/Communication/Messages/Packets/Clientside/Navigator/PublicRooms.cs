@@ -12,12 +12,12 @@ namespace Revolution.Application.Communication.Messages.Packets.Clientside.Navig
     {
         public uint EventId
         {
-            get { throw new NotImplementedException(); }
+            get { return 4009; }
         }
 
         public void ParsePacket(Session session, Message message)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
