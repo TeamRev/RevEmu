@@ -2,7 +2,7 @@ RevEmu
 ------
 
 Revolution Emulator (RevEmu, revemu, Rev) is a new Habbo Hotel emulation
-environment, designed to work with Habbo’s flash protocol. 
+environment, designed to work with Habboï¿½s flash protocol. 
 
 Built around speed & stability, Rev offers a brand new & open source
 alternative to popular environments such as Butterfly & Phoenix, both of
@@ -13,7 +13,7 @@ months.
 
 ## Information
 
-Rev’s current developers (as of time of writing) are:
+Revï¿½s current developers (as of time of writing) are:
 
 -   Zak
 -   Adil
@@ -34,4 +34,14 @@ Coming soon.
 
 ## License
 See LICENSE
+
+## Plugin Docs
+
+Coming soon. For now, you can expose:
+
+        var Message = Scripting.Message();
+	var Habbo = Scripting.Habbo(id);
+	var Console = Scripting.Console();
+
+More will arrive when the engine has been updated.
 
