@@ -39,9 +39,13 @@ See LICENSE
 
 Coming soon. For now, you can expose:
 
-        var Message = Scripting.Message();
+    var Message = Scripting.Message();
 	var Habbo = Scripting.Habbo(id);
 	var Console = Scripting.Console();
+	var TCP = Scripting.TCP();
+	
+See this pastie for a very brief overview of the Console & TCP API's.
+http://pastie.org/private/g11lusxmdqahdppxklj9zg
 
 More will arrive when the engine has been updated.
 
